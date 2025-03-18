@@ -523,46 +523,60 @@ const CountApp = ({ language }) => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          position: "absolute", // Center inside parent container
-          top: "50%", // Move down 50% from top
-          left: "50%", // Move right 50% from left
-          transform: "translate(-50%, -50%)", // Perfect centering trick
-          width: { xs: "80px", sm: "120px", md: "180px", lg: "250px" }, // Responsive size
-          height: { xs: "80px", sm: "120px", md: "180px", lg: "250px" },
+          width: "100%",
+          height: "100vh", // Ensure it takes full screen height
+          position: "relative", // So it stays inside the container
         }}
       >
-        {/* Bigger Circular Progress */}
-        <CircularProgress
-          variant="determinate"
-          value={100}
+        {/* Wrapper to control CircularProgress size */}
+        <Box
           sx={{
-            width: "100%",
-            height: "100%",
-            color: "#136391",
+            position: "relative", // Ensures text stays inside
+            width: { xs: "100px", sm: "150px", md: "200px", lg: "250px" }, // Adjust for different screens
+            height: { xs: "100px", sm: "150px", md: "200px", lg: "250px" }, // Keep a perfect circle
           }}
-        />
+        >
+          {/* Circular Progress Bar */}
+          <CircularProgress
+            variant="determinate"
+            value={100}
+            sx={{
+              width: "100%",
+              height: "100%",
+              color: "#136391",
+            }}
+          />
 
-        {/* Text in center of circle */}
-        <Typography
-          position="absolute"
-          sx={{
-            fontSize: { xs: "12px", sm: "16px", md: "22px", lg: "25px" },
-            fontWeight: "bold",
-          }}
-        >
-          {stats.runTime}
-        </Typography>
-        <Typography
-          position="absolute"
-          sx={{
-            fontSize: { xs: "14px", sm: "18px", md: "26px", lg: "30px" },
-            fontWeight: "bold",
-            top: "65%", // Adjust position of "ms" text
-          }}
-        >
-          ms
-        </Typography>
+          {/* Centered Text */}
+          <Typography
+            position="absolute"
+            top="50%"
+            left="50%"
+            sx={{
+              transform: "translate(-50%, -50%)", // Ensures it stays exactly in center
+              fontSize: { xs: "14px", sm: "16px", md: "22px", lg: "25px" },
+              fontWeight: "bold",
+            }}
+          >
+            {stats.runTime}
+          </Typography>
+
+          {/* "ms" below the number */}
+          <Typography
+            position="absolute"
+            top="60%" // Adjusts positioning
+            left="50%"
+            sx={{
+              transform: "translate(-50%, -50%)",
+              fontSize: { xs: "12px", sm: "14px", md: "18px", lg: "20px" },
+              fontWeight: "bold",
+            }}
+          >
+            ms
+          </Typography>
+        </Box>
       </Box>
+
       <Card
         sx={{
           border: "2px solid #A1BBCB",
