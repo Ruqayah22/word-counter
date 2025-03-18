@@ -507,67 +507,50 @@ const CountApp = ({ language }) => {
             </CardContent>
           </CardActionArea>
         </Card>
-        <Box
+      </Box>
+      <Box
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        sx={{
+          position: "relative", // Keeps Typography inside
+          width: { xs: "150px", sm: "200px", md: "250px", lg: "300px" }, // Adjust sizes for devices
+          height: { xs: "150px", sm: "200px", md: "250px", lg: "300px" },
+          margin: "20px auto", // Centers horizontally
+        }}
+      >
+        {/* Bigger Circular Progress */}
+        <CircularProgress
+          variant="determinate"
+          value={100}
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            width: "100%", // Ensures it stays inside the container
-            mt: { xs: 3, md: 4 }, // Adds spacing above on smaller screens
+            width: "100% !important",
+            height: "100% !important",
+            color: "#136391",
+          }}
+        />
+
+        {/* Text in center of circle */}
+        <Typography
+          position="absolute"
+          sx={{
+            fontSize: { xs: "16px", sm: "18px", md: "22px", lg: "25px" }, // Responsive font size
+            fontWeight: "bold",
+            marginBottom: { xs: "40px", sm: "45px", md: "50px" }, // Adjust spacing dynamically
           }}
         >
-          {/* Wrapper to control size and centering */}
-          <Box
-            sx={{
-              position: "relative",
-              width: { xs: "80px", sm: "120px", md: "160px", lg: "200px" }, // Adjusts dynamically
-              height: { xs: "80px", sm: "120px", md: "160px", lg: "200px" }, // Ensures it's always circular
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              overflow: "hidden", // Prevents overflow issues
-            }}
-          >
-            {/* Circular Progress */}
-            <CircularProgress
-              variant="determinate"
-              value={100}
-              sx={{
-                width: "100%",
-                height: "100%",
-                color: "#136391",
-              }}
-            />
-
-            {/* Centered Run Time */}
-            <Typography
-              position="absolute"
-              sx={{
-                top: "45%", // Fine-tune text position
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                fontSize: { xs: "12px", sm: "14px", md: "18px", lg: "22px" },
-                fontWeight: "bold",
-              }}
-            >
-              {stats.runTime}
-            </Typography>
-
-            {/* "ms" Label */}
-            <Typography
-              position="absolute"
-              sx={{
-                top: "65%", // Moves it slightly below the number
-                left: "50%",
-                transform: "translate(-50%, -50%)",
-                fontSize: { xs: "10px", sm: "12px", md: "14px", lg: "16px" },
-                fontWeight: "bold",
-              }}
-            >
-              ms
-            </Typography>
-          </Box>
-        </Box>
+          {stats.runTime}
+        </Typography>
+        <Typography
+          position="absolute"
+          sx={{
+            fontSize: { xs: "18px", sm: "22px", md: "26px", lg: "30px" },
+            fontWeight: "bold",
+            marginTop: { xs: "50px", sm: "65px", md: "80px" },
+          }}
+        >
+          ms
+        </Typography>
       </Box>
       <Card
         sx={{
