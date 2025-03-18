@@ -517,23 +517,24 @@ const CountApp = ({ language }) => {
           />
           <Typography position="absolute">{stats.runTime} ms</Typography>
         </Box> */}
-        {/* <Box
+        <Box
           sx={{
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: "100%",
-            minHeight: "200px", // Ensures it does not take the full height
-            position: "relative",
-            mt: { xs: 2, md: 4 }, // Add some spacing at the top
+            width: "100%", // Make sure it stays inside the container
+            mt: { xs: 3, md: 4 }, // Adds spacing on small screens
           }}
-        > */}
-          {/* Wrapper to ensure proper size on different screens */}
+        >
+          {/* Wrapper for proper size on different screens */}
           <Box
             sx={{
               position: "relative",
-              width: { xs: "120px", sm: "150px", md: "200px", lg: "250px" }, // Responsive sizes
-              height: { xs: "120px", sm: "150px", md: "200px", lg: "250px" },
+              width: { xs: "100px", sm: "130px", md: "170px", lg: "200px" }, // Adjusts dynamically
+              height: { xs: "100px", sm: "130px", md: "170px", lg: "200px" },
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
             }}
           >
             {/* Circular Progress */}
@@ -547,12 +548,12 @@ const CountApp = ({ language }) => {
               }}
             />
 
-            {/* Centered Run Time Value */}
+            {/* Centered Run Time */}
             <Typography
               position="absolute"
-              top="50%"
-              left="50%"
               sx={{
+                top: "50%",
+                left: "50%",
                 transform: "translate(-50%, -50%)",
                 fontSize: { xs: "14px", sm: "16px", md: "22px", lg: "25px" },
                 fontWeight: "bold",
@@ -561,12 +562,12 @@ const CountApp = ({ language }) => {
               {stats.runTime}
             </Typography>
 
-            {/* "ms" label below the number */}
+            {/* "ms" Label */}
             <Typography
               position="absolute"
-              top="65%" // Adjusted positioning
-              left="50%"
               sx={{
+                top: "65%", // Moves it slightly below the number
+                left: "50%",
                 transform: "translate(-50%, -50%)",
                 fontSize: { xs: "12px", sm: "14px", md: "18px", lg: "20px" },
                 fontWeight: "bold",
@@ -575,7 +576,7 @@ const CountApp = ({ language }) => {
               ms
             </Typography>
           </Box>
-        {/* </Box> */}
+        </Box>
       </Box>
 
       <Card
