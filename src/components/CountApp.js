@@ -518,15 +518,16 @@ const CountApp = ({ language }) => {
           <Typography position="absolute">{stats.runTime} ms</Typography>
         </Box> */}
         <Box
-          display="flex"
-          justifyContent="center"
-          alignItems="center"
           sx={{
-            position: "relative", // Keeps Typography inside
-            width: "100%", // Ensures it scales properly
-            maxWidth: { xs: "80vw", sm: "180px", md: "250px", lg: "300px" }, // Adjust max size dynamically
-            height: { xs: "80vw", sm: "180px", md: "250px", lg: "300px" }, // Ensures it's always a perfect circle
-            margin: "auto", // Centers in parent
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            position: "absolute", // Center inside parent container
+            top: "50%", // Move down 50% from top
+            left: "50%", // Move right 50% from left
+            transform: "translate(-50%, -50%)", // Perfect centering trick
+            width: { xs: "80px", sm: "120px", md: "180px", lg: "250px" }, // Responsive size
+            height: { xs: "80px", sm: "120px", md: "180px", lg: "250px" },
           }}
         >
           {/* Bigger Circular Progress */}
@@ -544,7 +545,7 @@ const CountApp = ({ language }) => {
           <Typography
             position="absolute"
             sx={{
-              fontSize: { xs: "12px", sm: "16px", md: "22px", lg: "25px" }, // Adjust for screen size
+              fontSize: { xs: "12px", sm: "16px", md: "22px", lg: "25px" },
               fontWeight: "bold",
             }}
           >
@@ -555,7 +556,7 @@ const CountApp = ({ language }) => {
             sx={{
               fontSize: { xs: "14px", sm: "18px", md: "26px", lg: "30px" },
               fontWeight: "bold",
-              top: "65%", // Move 'ms' slightly lower
+              top: "65%", // Adjust position of "ms" text
             }}
           >
             ms
