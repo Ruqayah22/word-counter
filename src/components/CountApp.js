@@ -523,19 +523,20 @@ const CountApp = ({ language }) => {
             justifyContent: "center",
             alignItems: "center",
             width: "100%",
-            height: "100vh", // Ensure it takes full screen height
-            position: "relative", // So it stays inside the container
+            minHeight: "200px", // Ensures it does not take the full height
+            position: "relative",
+            mt: { xs: 2, md: 4 }, // Add some spacing at the top
           }}
         >
-          {/* Wrapper to control CircularProgress size */}
+          {/* Wrapper to ensure proper size on different screens */}
           <Box
             sx={{
-              position: "relative", // Ensures text stays inside
-              width: { xs: "100px", sm: "150px", md: "200px", lg: "250px" }, // Adjust for different screens
-              height: { xs: "100px", sm: "150px", md: "200px", lg: "250px" }, // Keep a perfect circle
+              position: "relative",
+              width: { xs: "120px", sm: "150px", md: "200px", lg: "250px" }, // Responsive sizes
+              height: { xs: "120px", sm: "150px", md: "200px", lg: "250px" },
             }}
           >
-            {/* Circular Progress Bar */}
+            {/* Circular Progress */}
             <CircularProgress
               variant="determinate"
               value={100}
@@ -546,13 +547,13 @@ const CountApp = ({ language }) => {
               }}
             />
 
-            {/* Centered Text */}
+            {/* Centered Run Time Value */}
             <Typography
               position="absolute"
               top="50%"
               left="50%"
               sx={{
-                transform: "translate(-50%, -50%)", // Ensures it stays exactly in center
+                transform: "translate(-50%, -50%)",
                 fontSize: { xs: "14px", sm: "16px", md: "22px", lg: "25px" },
                 fontWeight: "bold",
               }}
@@ -560,10 +561,10 @@ const CountApp = ({ language }) => {
               {stats.runTime}
             </Typography>
 
-            {/* "ms" below the number */}
+            {/* "ms" label below the number */}
             <Typography
               position="absolute"
-              top="60%" // Adjusts positioning
+              top="65%" // Adjusted positioning
               left="50%"
               sx={{
                 transform: "translate(-50%, -50%)",
