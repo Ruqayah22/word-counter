@@ -517,63 +517,63 @@ const CountApp = ({ language }) => {
           />
           <Typography position="absolute">{stats.runTime} ms</Typography>
         </Box> */}
-      </Box>
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-          width: "100%",
-          height: "100vh", // Ensure it takes full screen height
-          position: "relative", // So it stays inside the container
-        }}
-      >
-        {/* Wrapper to control CircularProgress size */}
         <Box
           sx={{
-            position: "relative", // Ensures text stays inside
-            width: { xs: "100px", sm: "150px", md: "200px", lg: "250px" }, // Adjust for different screens
-            height: { xs: "100px", sm: "150px", md: "200px", lg: "250px" }, // Keep a perfect circle
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%",
+            height: "100vh", // Ensure it takes full screen height
+            position: "relative", // So it stays inside the container
           }}
         >
-          {/* Circular Progress Bar */}
-          <CircularProgress
-            variant="determinate"
-            value={100}
+          {/* Wrapper to control CircularProgress size */}
+          <Box
             sx={{
-              width: "100%",
-              height: "100%",
-              color: "#136391",
-            }}
-          />
-
-          {/* Centered Text */}
-          <Typography
-            position="absolute"
-            top="50%"
-            left="50%"
-            sx={{
-              transform: "translate(-50%, -50%)", // Ensures it stays exactly in center
-              fontSize: { xs: "14px", sm: "16px", md: "22px", lg: "25px" },
-              fontWeight: "bold",
+              position: "relative", // Ensures text stays inside
+              width: { xs: "100px", sm: "150px", md: "200px", lg: "250px" }, // Adjust for different screens
+              height: { xs: "100px", sm: "150px", md: "200px", lg: "250px" }, // Keep a perfect circle
             }}
           >
-            {stats.runTime}
-          </Typography>
+            {/* Circular Progress Bar */}
+            <CircularProgress
+              variant="determinate"
+              value={100}
+              sx={{
+                width: "100%",
+                height: "100%",
+                color: "#136391",
+              }}
+            />
 
-          {/* "ms" below the number */}
-          <Typography
-            position="absolute"
-            top="60%" // Adjusts positioning
-            left="50%"
-            sx={{
-              transform: "translate(-50%, -50%)",
-              fontSize: { xs: "12px", sm: "14px", md: "18px", lg: "20px" },
-              fontWeight: "bold",
-            }}
-          >
-            ms
-          </Typography>
+            {/* Centered Text */}
+            <Typography
+              position="absolute"
+              top="50%"
+              left="50%"
+              sx={{
+                transform: "translate(-50%, -50%)", // Ensures it stays exactly in center
+                fontSize: { xs: "14px", sm: "16px", md: "22px", lg: "25px" },
+                fontWeight: "bold",
+              }}
+            >
+              {stats.runTime}
+            </Typography>
+
+            {/* "ms" below the number */}
+            <Typography
+              position="absolute"
+              top="60%" // Adjusts positioning
+              left="50%"
+              sx={{
+                transform: "translate(-50%, -50%)",
+                fontSize: { xs: "12px", sm: "14px", md: "18px", lg: "20px" },
+                fontWeight: "bold",
+              }}
+            >
+              ms
+            </Typography>
+          </Box>
         </Box>
       </Box>
 
