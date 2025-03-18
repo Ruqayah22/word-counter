@@ -507,6 +507,67 @@ const CountApp = ({ language }) => {
             </CardContent>
           </CardActionArea>
         </Card>
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            width: "100%", // Ensures it stays inside the container
+            mt: { xs: 3, md: 4 }, // Adds spacing above on smaller screens
+          }}
+        >
+          {/* Wrapper to control size and centering */}
+          <Box
+            sx={{
+              position: "relative",
+              width: { xs: "80px", sm: "120px", md: "160px", lg: "200px" }, // Adjusts dynamically
+              height: { xs: "80px", sm: "120px", md: "160px", lg: "200px" }, // Ensures it's always circular
+              display: "flex",
+              justifyContent: "center",
+              alignItems: "center",
+              overflow: "hidden", // Prevents overflow issues
+            }}
+          >
+            {/* Circular Progress */}
+            <CircularProgress
+              variant="determinate"
+              value={100}
+              sx={{
+                width: "100%",
+                height: "100%",
+                color: "#136391",
+              }}
+            />
+
+            {/* Centered Run Time */}
+            <Typography
+              position="absolute"
+              sx={{
+                top: "45%", // Fine-tune text position
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                fontSize: { xs: "12px", sm: "14px", md: "18px", lg: "22px" },
+                fontWeight: "bold",
+              }}
+            >
+              {stats.runTime}
+            </Typography>
+
+            {/* "ms" Label */}
+            <Typography
+              position="absolute"
+              sx={{
+                top: "65%", // Moves it slightly below the number
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                fontSize: { xs: "10px", sm: "12px", md: "14px", lg: "16px" },
+                fontWeight: "bold",
+              }}
+            >
+              ms
+            </Typography>
+          </Box>
+        </Box>
       </Box>
       <Card
         sx={{
