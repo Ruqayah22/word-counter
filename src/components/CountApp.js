@@ -519,7 +519,6 @@ const CountApp = ({ language }) => {
         </Box> */}
        
       </Box>
-
       <Card
         sx={{
           border: "2px solid #A1BBCB",
