@@ -517,7 +517,7 @@ const CountApp = ({ language }) => {
           />
           <Typography position="absolute">{stats.runTime} ms</Typography>
         </Box> */}
-        <Box
+        {/* <Box
           sx={{
             display: "flex",
             justifyContent: "center",
@@ -527,7 +527,7 @@ const CountApp = ({ language }) => {
             position: "relative",
             mt: { xs: 2, md: 4 }, // Add some spacing at the top
           }}
-        >
+        > */}
           {/* Wrapper to ensure proper size on different screens */}
           <Box
             sx={{
@@ -575,7 +575,7 @@ const CountApp = ({ language }) => {
               ms
             </Typography>
           </Box>
-        </Box>
+        {/* </Box> */}
       </Box>
 
       <Card
