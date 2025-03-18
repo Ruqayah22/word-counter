@@ -93,3 +93,18 @@ import { BrowserRouter } from "react-router-dom";
 ```
 
 ### Done  The app is now live on GitHub Pages. 
+
+### If the changes don’t show, clear your cache using:
+> inside the page in browser
+
+```
+Windows/Linux: Ctrl + Shift + R
+Mac: Cmd + Shift + R
+```
+> If Still Not Working: Force Redeploy
+>Try deleting the gh-pages branch and re-deploying:
+
+```
+git push origin --delete gh-pages
+npm run deploy 
+```
