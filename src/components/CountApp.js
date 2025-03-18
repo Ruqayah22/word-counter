@@ -522,11 +522,11 @@ const CountApp = ({ language }) => {
           justifyContent="center"
           alignItems="center"
           sx={{
-            position: "relative", // Ensures Typography stays inside
-            width: "100%", // Let it scale with the container
-            maxWidth: { xs: "120px", sm: "180px", md: "250px", lg: "300px" }, // Control max size
-            height: "auto",
-            margin: "20px auto", // Center horizontally
+            position: "relative", // Keeps Typography inside
+            width: "100%", // Ensures it scales properly
+            maxWidth: { xs: "80vw", sm: "180px", md: "250px", lg: "300px" }, // Adjust max size dynamically
+            height: { xs: "80vw", sm: "180px", md: "250px", lg: "300px" }, // Ensures it's always a perfect circle
+            margin: "auto", // Centers in parent
           }}
         >
           {/* Bigger Circular Progress */}
@@ -535,7 +535,7 @@ const CountApp = ({ language }) => {
             value={100}
             sx={{
               width: "100%",
-              height: "auto",
+              height: "100%",
               color: "#136391",
             }}
           />
@@ -546,7 +546,6 @@ const CountApp = ({ language }) => {
             sx={{
               fontSize: { xs: "12px", sm: "16px", md: "22px", lg: "25px" }, // Adjust for screen size
               fontWeight: "bold",
-              marginBottom: { xs: "30px", sm: "40px", md: "50px" }, // Dynamically adjust spacing
             }}
           >
             {stats.runTime}
@@ -556,7 +555,7 @@ const CountApp = ({ language }) => {
             sx={{
               fontSize: { xs: "14px", sm: "18px", md: "26px", lg: "30px" },
               fontWeight: "bold",
-              marginTop: { xs: "40px", sm: "55px", md: "80px" },
+              top: "65%", // Move 'ms' slightly lower
             }}
           >
             ms
