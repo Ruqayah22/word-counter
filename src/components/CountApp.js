@@ -522,10 +522,11 @@ const CountApp = ({ language }) => {
           justifyContent="center"
           alignItems="center"
           sx={{
-            position: "relative", // Keeps Typography inside
-            width: { xs: "150px", sm: "200px", md: "250px", lg: "300px" }, // Adjust sizes for devices
-            height: { xs: "150px", sm: "200px", md: "250px", lg: "300px" },
-            margin: "20px auto", // Centers horizontally
+            position: "relative", // Ensures Typography stays inside
+            width: "100%", // Let it scale with the container
+            maxWidth: { xs: "120px", sm: "180px", md: "250px", lg: "300px" }, // Control max size
+            height: "auto",
+            margin: "20px auto", // Center horizontally
           }}
         >
           {/* Bigger Circular Progress */}
@@ -533,8 +534,8 @@ const CountApp = ({ language }) => {
             variant="determinate"
             value={100}
             sx={{
-              width: "100% !important",
-              height: "100% !important",
+              width: "100%",
+              height: "auto",
               color: "#136391",
             }}
           />
@@ -543,9 +544,9 @@ const CountApp = ({ language }) => {
           <Typography
             position="absolute"
             sx={{
-              fontSize: { xs: "16px", sm: "18px", md: "22px", lg: "25px" }, // Responsive font size
+              fontSize: { xs: "12px", sm: "16px", md: "22px", lg: "25px" }, // Adjust for screen size
               fontWeight: "bold",
-              marginBottom: { xs: "40px", sm: "45px", md: "50px" }, // Adjust spacing dynamically
+              marginBottom: { xs: "30px", sm: "40px", md: "50px" }, // Dynamically adjust spacing
             }}
           >
             {stats.runTime}
@@ -553,9 +554,9 @@ const CountApp = ({ language }) => {
           <Typography
             position="absolute"
             sx={{
-              fontSize: { xs: "18px", sm: "22px", md: "26px", lg: "30px" },
+              fontSize: { xs: "14px", sm: "18px", md: "26px", lg: "30px" },
               fontWeight: "bold",
-              marginTop: { xs: "50px", sm: "65px", md: "80px" },
+              marginTop: { xs: "40px", sm: "55px", md: "80px" },
             }}
           >
             ms
