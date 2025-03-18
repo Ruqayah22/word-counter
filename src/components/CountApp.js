@@ -522,19 +522,20 @@ const CountApp = ({ language }) => {
             display: "flex",
             justifyContent: "center",
             alignItems: "center",
-            width: "100%", // Make sure it stays inside the container
-            mt: { xs: 3, md: 4 }, // Adds spacing on small screens
+            width: "100%", // Ensures it stays inside the container
+            mt: { xs: 3, md: 4 }, // Adds spacing above on smaller screens
           }}
         >
-          {/* Wrapper for proper size on different screens */}
+          {/* Wrapper to control size and centering */}
           <Box
             sx={{
               position: "relative",
-              width: { xs: "100px", sm: "130px", md: "170px", lg: "200px" }, // Adjusts dynamically
-              height: { xs: "100px", sm: "130px", md: "170px", lg: "200px" },
+              width: { xs: "80px", sm: "120px", md: "160px", lg: "200px" }, // Adjusts dynamically
+              height: { xs: "80px", sm: "120px", md: "160px", lg: "200px" }, // Ensures it's always circular
               display: "flex",
               justifyContent: "center",
               alignItems: "center",
+              overflow: "hidden", // Prevents overflow issues
             }}
           >
             {/* Circular Progress */}
@@ -552,10 +553,10 @@ const CountApp = ({ language }) => {
             <Typography
               position="absolute"
               sx={{
-                top: "50%",
+                top: "45%", // Fine-tune text position
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                fontSize: { xs: "14px", sm: "16px", md: "22px", lg: "25px" },
+                fontSize: { xs: "12px", sm: "14px", md: "18px", lg: "22px" },
                 fontWeight: "bold",
               }}
             >
@@ -569,7 +570,7 @@ const CountApp = ({ language }) => {
                 top: "65%", // Moves it slightly below the number
                 left: "50%",
                 transform: "translate(-50%, -50%)",
-                fontSize: { xs: "12px", sm: "14px", md: "18px", lg: "20px" },
+                fontSize: { xs: "10px", sm: "12px", md: "14px", lg: "16px" },
                 fontWeight: "bold",
               }}
             >
