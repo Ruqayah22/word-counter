@@ -1,70 +1,95 @@
-# Getting Started with Create React App
+# Word Counter Project 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+I take the idea of this project from those two projects:
+- [first one](https://wordcount.com/)
+- [second one](https://charactercalculator.com/ar/)
 
-## Available Scripts
+## Used In It 
+- React js.
+- MUI (Material UI).
+- i18next.
 
-In the project directory, you can run:
+### What is the new in it 
 
-### `npm start`
+used the english and arabic language inside it together.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+----
+### Deployed It 
+in github pages (used it for the first time).
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+------
+### The Steps to Deployed it To Github pages:
 
-### `npm test`
+1. install the package: 
+``` 
+npm install gh-pages --save-dev 
+or 
+npm install gh-pages --save-dev --legacy-peer-deps
+or 
+npm install gh-pages --save-dev --force
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```
+2. Add homepage in package.json
+` "homepage": "https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME" `
 
-### `npm run build`
+3. Add Deployment Scripts 
+> (Inside package.json, find "scripts" and add these two scripts:)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build" 
+```
+be like:
+```
+"scripts": {
+  "start": "react-scripts start",
+  "build": "react-scripts build",
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+}
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+4. Push Your Code to GitHub 
+- if you don't have a GitHub repository do this:
+```
+git init
+git add .
+git commit -m "Initial commit"
+git branch -M master
+git remote add origin https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git
+git push -u origin master
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+if already have do this:
+```
+git add .
+git commit -m "Your Commit"
+git push origin master
+```
+5. Deploy to GitHub Pages
+Run this command to deploy:
+`npm run deploy`
 
-### `npm run eject`
+> After it finishes, your app will be live at:
+> https://YOUR_GITHUB_USERNAME.github.io/YOUR_REPO_NAME
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+6. Enable GitHub Pages in Repo Settings
+1. Go to your GitHub repository.
+2. Click on Settings → Pages.
+3. Under Source, select GitHub Actions or gh-pages branch.
+4. Click Save.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+> the repository of you project you deploy it now. 
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+7. (Optional) Fix Routing for React Router
+If your project uses React Router, update BrowserRouter in index.js:
+```
+import { BrowserRouter } from "react-router-dom";
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<BrowserRouter basename="/YOUR_REPO_NAME">
+  <App />
+</BrowserRouter>
 
-## Learn More
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Done  The app is now live on GitHub Pages. 

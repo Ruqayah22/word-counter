@@ -2,7 +2,7 @@
   "name": "word-counter",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Ruqayah22.github.io/word-counter",
+  "homepage": "https://Ruqayah22.github.io/word-counter-",
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.0",

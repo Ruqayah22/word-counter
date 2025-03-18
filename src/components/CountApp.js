@@ -522,10 +522,10 @@ const CountApp = ({ language }) => {
           justifyContent="center"
           alignItems="center"
           sx={{
-            position: "relative", // Important to position Typography inside
-            width: "250px", // Control total size (adjust to make circle bigger/smaller)
-            height: "250px",
-            margin: "20px 100%", // Center horizontally in parent
+            position: "relative", // Keeps Typography inside
+            width: { xs: "150px", sm: "200px", md: "250px", lg: "300px" }, // Adjust sizes for devices
+            height: { xs: "150px", sm: "200px", md: "250px", lg: "300px" },
+            margin: "20px auto", // Centers horizontally
           }}
         >
           {/* Bigger Circular Progress */}
@@ -533,8 +533,8 @@ const CountApp = ({ language }) => {
             variant="determinate"
             value={100}
             sx={{
-              width: "100% !important", // Make it take full Box size
-              height: "100% !important", // Same here
+              width: "100% !important",
+              height: "100% !important",
               color: "#136391",
             }}
           />
@@ -543,9 +543,9 @@ const CountApp = ({ language }) => {
           <Typography
             position="absolute"
             sx={{
-              fontSize: "25px", // Adjust text size
+              fontSize: { xs: "16px", sm: "18px", md: "22px", lg: "25px" }, // Responsive font size
               fontWeight: "bold",
-              marginBottom: "50px",
+              marginBottom: { xs: "40px", sm: "45px", md: "50px" }, // Adjust spacing dynamically
             }}
           >
             {stats.runTime}
@@ -553,9 +553,9 @@ const CountApp = ({ language }) => {
           <Typography
             position="absolute"
             sx={{
-              fontSize: "30px", // Adjust text size
+              fontSize: { xs: "18px", sm: "22px", md: "26px", lg: "30px" },
               fontWeight: "bold",
-              marginTop: "80px",
+              marginTop: { xs: "50px", sm: "65px", md: "80px" },
             }}
           >
             ms
