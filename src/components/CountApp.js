@@ -507,17 +507,6 @@ const CountApp = ({ language }) => {
             </CardContent>
           </CardActionArea>
         </Card>
-        {/* <Box display="flex" justifyContent="center" alignItems="center" sx={{}}>
-          
-          <CircularProgress
-            variant="determinate"
-            value={100}
-            sx={{}}
-            
-          />
-          <Typography position="absolute">{stats.runTime} ms</Typography>
-        </Box> */}
-       
       </Box>
       <Card
         sx={{
