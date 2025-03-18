@@ -517,53 +517,52 @@ const CountApp = ({ language }) => {
           />
           <Typography position="absolute">{stats.runTime} ms</Typography>
         </Box> */}
-        <Box
+      </Box>
+      <Box
+        sx={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          position: "absolute", // Center inside parent container
+          top: "50%", // Move down 50% from top
+          left: "50%", // Move right 50% from left
+          transform: "translate(-50%, -50%)", // Perfect centering trick
+          width: { xs: "80px", sm: "120px", md: "180px", lg: "250px" }, // Responsive size
+          height: { xs: "80px", sm: "120px", md: "180px", lg: "250px" },
+        }}
+      >
+        {/* Bigger Circular Progress */}
+        <CircularProgress
+          variant="determinate"
+          value={100}
           sx={{
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            position: "absolute", // Center inside parent container
-            top: "50%", // Move down 50% from top
-            left: "50%", // Move right 50% from left
-            transform: "translate(-50%, -50%)", // Perfect centering trick
-            width: { xs: "80px", sm: "120px", md: "180px", lg: "250px" }, // Responsive size
-            height: { xs: "80px", sm: "120px", md: "180px", lg: "250px" },
+            width: "100%",
+            height: "100%",
+            color: "#136391",
+          }}
+        />
+
+        {/* Text in center of circle */}
+        <Typography
+          position="absolute"
+          sx={{
+            fontSize: { xs: "12px", sm: "16px", md: "22px", lg: "25px" },
+            fontWeight: "bold",
           }}
         >
-          {/* Bigger Circular Progress */}
-          <CircularProgress
-            variant="determinate"
-            value={100}
-            sx={{
-              width: "100%",
-              height: "100%",
-              color: "#136391",
-            }}
-          />
-
-          {/* Text in center of circle */}
-          <Typography
-            position="absolute"
-            sx={{
-              fontSize: { xs: "12px", sm: "16px", md: "22px", lg: "25px" },
-              fontWeight: "bold",
-            }}
-          >
-            {stats.runTime}
-          </Typography>
-          <Typography
-            position="absolute"
-            sx={{
-              fontSize: { xs: "14px", sm: "18px", md: "26px", lg: "30px" },
-              fontWeight: "bold",
-              top: "65%", // Adjust position of "ms" text
-            }}
-          >
-            ms
-          </Typography>
-        </Box>
+          {stats.runTime}
+        </Typography>
+        <Typography
+          position="absolute"
+          sx={{
+            fontSize: { xs: "14px", sm: "18px", md: "26px", lg: "30px" },
+            fontWeight: "bold",
+            top: "65%", // Adjust position of "ms" text
+          }}
+        >
+          ms
+        </Typography>
       </Box>
-
       <Card
         sx={{
           border: "2px solid #A1BBCB",
